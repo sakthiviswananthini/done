@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartWatch Pro</title>
+  <link rel="icon" href="blue-removebg-preview.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --primary: #6f42c1;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .hero {
+      background: linear-gradient(135deg, #f3e8ff, #ffffff);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .hero img {
+      transition: transform 0.4s ease;
+      max-width: 400px;
+    }
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+    .btn-buy {
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      transition: background 0.3s;
+    }
+    .btn-buy:hover {
+      background: #5a32a3;
+    }
+    .feature-box {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: #fff;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .price-card {
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      transition: transform 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+    .review {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: #fafafa;
+      transition: box-shadow 0.3s;
+    }
+    .review:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #6f42c1;
+      color: white;
+      padding: 2rem 0;
+    }
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: white;
+    }
+    .contact-section {
+      background: #f8f9fa;
+      padding: 4rem 0;
+    }
+    .contact-section h2 {
+      color: #333;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+    }
+    .btn-send {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      transition: background 0.3s;
+    }
+    .btn-send:hover {
+      background: #5a32a3;
+    }
+    /* gallery */
+    #gallery img {
+      /* font-size: ; */
+      width: 250px;
+      height: 250px;
+      border-radius: 10px;
+      transition: transform 0.4s;
+    }
+    #gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* product cards */
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 50%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product-card .card-body h5 {
+      color: var(--primary);
+    }
+  /* Table appearance only */
+  .custom-table {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+
+  .custom-table thead {
+    background-color: #5b13e1;
+    color: #fff;
+  }
+
+  .custom-table th {
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .custom-table td {
+    background-color: #fff;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .custom-table tr:nth-child(even) td {
+    background-color: #f9f6ff;
+  }
+
+  .custom-table tbody tr:hover td {
+    background-color: #ede3ff;
+    transition: 0.3s;
+  }
+  .thee th{
+    color: #5a32a3;
+    font-size:large;
+  }
+  .immm1{
+    height: 150%;
+    width: 500%;
+  }
+  .immm{
+    height: 250px;
+    width: 250px;
+  }
+  .immm4{
+    /* height: 200px;
+    width: 200px; */
+  }
+  /* .gap{
+    display: flex;
+    margin-left: 40px ;
+  } */
+   .immmg{
+    position: relative;
+    right: 60px;
+        height: 250px;
+    width: 250px;
+   }
+      .immmg1{
+    position: relative;
+    left: 60px;
+        height: 250px;
+    width: 250px;
+   }
+</style>
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">SmartWatch Pro</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#price">Price</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Our Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">SmartWatch Pro — Your Ultimate Fitness & Lifestyle Partner</h1>
+    <p class="lead mb-4">Track your health, stay connected, and look stylish — all from your wrist.</p>
+    <div class="gap">
+     <img src="image7-removebg-preview.png" class="img-fluid mb-4 rounded immmg" alt="SmartWatch Pro">
+    <img src="blue-removebg-preview.png" class="img-fluid mb-4 rounded immm4" alt="SmartWatch Pro">
+       
+          <img src="img8-removebg-preview.png" class="img-fluid mb-4 rounded immmg1" alt="SmartWatch Pro">
+          </div>
+         
+           <!-- <img src="blue-removebg-preview.png" class="img-fluid mb-4 rounded immm4"  alt="SmartWatch Pro"> -->
+  </div>
+  </div>
+  
+</section>
+
+<!-- Features -->
+<section id="features" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Why Choose SmartWatch Pro?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <!-- Heartbeat icon -->
+<img src="heart.png" height="100px" width="100px" alt="">
+          <h5>   Health Monitoring</h5>
+          <p>Track heart rate, blood oxygen, sleep, and steps — all with real-time accuracy.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <img src="connect.png" alt="" height="100px" width="100px" >
+          <h5>  Seamless Connectivity</h5>
+          <p>Stay in touch with notifications, calls, and messages synced to your phone.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+    
+        <div class="feature-box">
+              <img src="watchbatter.png" height="100px" width="100px" alt="">
+       <h5> Long Battery Life</h5>
+          <p>Enjoy up to 10 days of use with fast magnetic charging and energy optimization.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+         
+        <div class="feature-box">
+            <img src="water.png" height="100px" width="100px" alt="">
+       <h5> Water Resistant</h5>
+          <p>IP68-rated — perfect for swimming, workouts, and rainy days.</p>
+        </div>
+      </div>
+            
+      <div class="col-md-4">
+   
+        <div class="feature-box">
+               <img src="watercustom.png" height="100px" width="100px" alt="">
+          <h5>Customizable Watch Faces</h5>
+          <p>Match your style with dozens of beautiful, interactive watch faces.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        
+          
+        <div class="feature-box">
+            <img src="dia.png" height="100px" width="100px" alt=""> 
+      <h5>Premium Build</h5>
+          <p>Lightweight aluminum design with a sleek and durable strap for all-day comfort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Price -->
+<section id="price" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4 text-primary">Exclusive Offers</h2>
+    <div class="row justify-content-center">
+      <!-- Left Card -->
+      <div class="col-md-5 mb-4">
+        <div class="price-card p-4 shadow-sm rounded">
+          <h3>Only ₹1999</h3>
+          <p class="text-muted">Limited-time offer — includes 1-year warranty</p>
+          <a href="#" id="buyBtn1" class="btn btn-primary">Buy SmartWatch Pro</a>
+        </div>
+      </div>
+
+      <!-- Right Card -->
+      <div class="col-md-5 mb-4">
+        <div class="price-card p-4 shadow-sm rounded">
+          <h3>Only ₹2499</h3>
+          <p class="text-muted">Premium edition — includes 2-year warranty</p>
+          <a href="#" id="buyBtn2" class="btn btn-primary ">Buy SmartWatch Pro Plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Reviews -->
+<section id="reviews" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">What Our Customers Say</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="review">
+          <p>“This smartwatch changed my fitness routine! The heart rate and sleep tracking are so accurate.”</p>
+          <small>- Sakthi</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review">
+          <p>“Stylish design, long battery, and perfect notifications. Best value smartwatch out there!”</p>
+          <small>- Viswa</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review">
+          <p>“I love the customization options — I can switch faces and straps anytime.”</p>
+          <small>- Nanthini</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Gallery</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="image1.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 1"></div>
+      <div class="col-md-4"><img src="image2.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 2"></div>
+      <div class="col-md-4"><img src="image3.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 3"></div>
+      <div class="col-md-4"><img src="image4.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 4"></div>
+      <div class="col-md-4"><img src="image5.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 5"></div>
+      <div class="col-md-4"><img src="image6.png" class="img-fluid rounded shadow-sm" alt="Smartwatch 6"></div>
+    </div>
+  </div>
+</section>
+
+<section id="comparison" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4 text-primary">SmartWatch Pro vs Other Smartwatches</h2>
+    <p class="text-muted mb-5">Compare key features and see why SmartWatch Pro is the smarter choice.</p>
+    <div class="table-responsive">
+      <table class="table shadow-sm custom-table">
+        <thead>
+          <tr class="thee">
+            <th>Features</th>
+            <th>SmartWatch Pro</th>
+            <th>Other Smartwatches</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Battery Life</td>
+            <td>Up to 10 days on a single charge</td>
+            <td>2-4 days average</td>
+          </tr>
+          <tr>
+            <td>Health Tracking</td>
+            <td>Heart rate, SpO₂, Sleep, Step counter — All real-time</td>
+            <td>Limited tracking, often inaccurate</td>
+          </tr>
+          <tr>
+            <td>Display</td>
+            <td>1.8” HD Touch Display with Bright Mode</td>
+            <td>Low brightness, smaller screens</td>
+          </tr>
+          <tr>
+            <td>Water Resistance</td>
+            <td>IP68 Certified (Waterproof)</td>
+            <td>Often splash resistant only</td>
+          </tr>
+          <tr>
+            <td>Watch Faces</td>
+            <td>50+ Customizable Digital & Analog Styles</td>
+            <td>Few default faces</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>₹1,999 - Budget-friendly with premium features </td>
+            <td>₹4,000 - ₹10,000+ for similar specs</td>
+          </tr>
+          <tr>
+            <td>Warranty</td>
+            <td>1 Year Manufacturer Warranty</td>
+            <td>6 Months or None</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Products -->
+<section id="products" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Our Products</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="product-card">
+          <img src="image6.png" alt="Black Edition">
+          <div class="card-body">
+            <h5>SmartWatch Pro Black</h5>
+            <p class="text-muted mb-2">₹1,999</p>
+            <a href="#" class="btn btn-buy btn-sm">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="product-card">
+          <img src="image3.png" alt="Silver Edition">
+          <div class="card-body">
+            <h5>SmartWatch Pro Silver</h5>
+            <p class="text-muted mb-2">₹2,199</p>
+            <a href="#" class="btn btn-buy btn-sm">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="product-card">
+          <img src="image5.png" alt="Pink Edition">
+          <div class="card-body">
+            <h5>SmartWatch Pro Pink</h5>
+            <p class="text-muted mb-2">₹2,099</p>
+            <a href="#" class="btn btn-buy btn-sm">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="product-card">
+          <img src="image4.png" alt="Blue Edition">
+          <div class="card-body">
+            <h5>SmartWatch Pro Blue</h5>
+            <p class="text-muted mb-2">₹2,299</p>
+            <a href="#" class="btn btn-buy btn-sm">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Get in Touch</h2>
+      <p class="text-muted">Have a question or need support? We’d love to hear from you!</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn-send">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="text-center">
+  <div class="container">
+    <p>© SmartWatch Pro. All Rights Reserved.</p>
+    <div>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#supportModal">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById("buyBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("✅ Your order confirmed! Thank you for choosing SmartWatch Pro.");
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Your message has been sent successfully!");
+    this.reset();
+  });
+</script>
+</body>
+</html>
